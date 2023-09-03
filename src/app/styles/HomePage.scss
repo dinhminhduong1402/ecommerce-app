@@ -1,0 +1,53 @@
+
+
+.hero-banner {
+  width: 100vw;
+  height: 590px;
+  display: flex;
+  justify-content: center;
+
+  .hero-banner-container {
+    width: 100vw;
+    max-width: 1200px;
+    height: 590px;
+    background-image: url('../asset/hero-banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    .hero-banner-text {
+      width: 50%;
+      margin-left: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 20px;
+      
+      h6, h2, p, button {
+        color: #fff;
+      }
+
+      h2 {
+        font-size: 3rem;
+        font-weight: 200;
+      }
+
+      button {
+        border: #fff solid 0.3px;
+        background-color: unset;
+        height: 38px;
+        width: 20%;
+        cursor: pointer;
+        &:hover {
+          background-color: rgba(250, 250, 250, 0.1);
+        }
+      }
+    }
+  }
+
+  
+}
