@@ -1,0 +1,28 @@
+.sub-footer {
+  width: 100vw;
+  height: 164px;
+  display: flex;
+  justify-content: center;
+  background-color: #F9F2ED;
+
+  .sub-footer-container {
+    border-top: 0.2px solid rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    max-width: 1200px;
+    height: 164px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    .left {
+      margin-left: 40px;
+    }
+    .right {
+      display: flex;
+      gap: 10px;
+      justify-content: end;
+      margin-right: 40px;
+    }
+  }
+}
