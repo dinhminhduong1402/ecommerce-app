@@ -51,3 +51,28 @@
 
   
 }
+
+.best-seller-products {
+  width: 100vw;
+  height: 470px;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+
+  .best-seller-products-container {
+    width: 100vw;
+    max-width: 1200px;
+    height: 470px;
+
+    .section-title {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      margin: 0 40px 20px 40px;
+    }
+
+    .products-slider {
+     
+    }
+  }
+}

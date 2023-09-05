@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Footer.scss'
 import Link from 'next/link'
-import {BsArrowRight} from 'react-icons/bs'
+import { BsArrowRight } from 'react-icons/bs'
 
 const Footer = () => {
   return (
@@ -69,7 +69,7 @@ const Footer = () => {
           <ul>
             <li>
               <Link className="links" href={'/'}>
-              Newsletter
+                Newsletter
               </Link>
             </li>
             <li>
@@ -79,20 +79,20 @@ const Footer = () => {
             </li>
             <li>
               <Link className="links" href={'/'}>
-              Community Guidelines
+                Community Guidelines
               </Link>
             </li>
             <li>
               <Link className="links" href={'/'}>
-              Advertise Online
+                Advertise Online
               </Link>
             </li>
             <li>
               <Link className="links" href={'/'}>
-              Privacy Notice
+                Privacy Notice
               </Link>
               <Link className="links" href={'/'}>
-              Terms & Conditions
+                Terms & Conditions
               </Link>
             </li>
           </ul>
@@ -101,13 +101,13 @@ const Footer = () => {
         <div className="col col-right">
           <h4>SUBSCRIBE FOR NEWS</h4>
           <p>Subscribe to our newsletter and get 10% off on your first order.</p>
-          <div className='submit-form'>
-          <input type="email" placeholder='Your Email' />
-          <button><BsArrowRight/></button>
+          <div className="submit-form">
+            <input type="email" placeholder="Your Email" />
+            <button>
+              <BsArrowRight />
+            </button>
           </div>
-
         </div>
-
       </div>
     </div>
   )

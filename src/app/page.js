@@ -1,5 +1,7 @@
+
 import './styles/HomePage.scss'
 import { subFont } from './fonts'
+import { BestSellerProduct } from './components'
 
 export default function Home() {
   return (
@@ -20,13 +22,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section>BestSeller</section>
+      <BestSellerProduct/>
+
       <section>Brands</section>
       <section>SubBanner</section>
       <section>FeaturedProducts</section>
       <section>Discount</section>
       <section>LatestNews</section>
-      <section>FeaturedProducts</section>
     </>
   )
 }
+
+
