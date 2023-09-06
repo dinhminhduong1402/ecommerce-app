@@ -1,3 +1,8 @@
 .slider-wrapper {
-  
+  .react-multi-carousel-track {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+  }
 }

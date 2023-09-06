@@ -12,8 +12,8 @@ productPrevPrice}) => {
       <div className="thumb">
         <Image
           src={productThumb && urlForImage(productThumb).url()}
-          width={300}
-          height={300}
+          width={250}
+          height={250}
           alt='product-thumb'
         ></Image>
       </div>
