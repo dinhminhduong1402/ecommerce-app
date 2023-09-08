@@ -1,0 +1,43 @@
+.products-wrapper {
+  width: 100%;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    grid-auto-flow: dense;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 0;
+
+  .next-btn, .prev-btn {
+    border: none;
+    background-color: unset;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .page-number {
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    
+    button {
+      width: 40px;
+      height: 40px;
+      background-color: unset;
+      border: 0.2px solid rgba(0, 0, 0, 0.5);
+      &.active {
+        background-color: #ef4626;
+        border-color: #ef4626;
+        color: #fff;
+      }
+    }
+  }
+}

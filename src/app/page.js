@@ -2,7 +2,7 @@
 import './styles/HomePage.scss'
 import { subFont } from './fonts'
 import Image from 'next/image'
-import { BestSellerProduct, FeaturedProduct } from './components'
+import { BestSellerProduct, FeaturedProduct, PopularCatogory } from './components'
 
 // images
 import { brand1, brand2, brand3, brand4, brand5 } from './asset/brand'
@@ -64,7 +64,10 @@ Ingredients of the highest quality.
 
       <FeaturedProduct/>
 
+      <PopularCatogory/>
+
       <section>Discount</section>
+
       <section>LatestNews</section>
     </>
   )

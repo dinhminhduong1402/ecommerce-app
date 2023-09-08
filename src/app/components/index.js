@@ -7,5 +7,7 @@ import ProductCard from "./ProductCard";
 import ProductsSlider from "./ProductsSlider";
 import BestSellerProduct from "./BestSellerProduct";
 import FeaturedProduct from "./FeaturedProduct";
+import PopularCatogory from "./PopularCatogory";
+import Pagination from "./Pagination";
 
-export { TopNav, Header, Footer, SubFooter, MainLayout, ProductCard, ProductsSlider, BestSellerProduct, FeaturedProduct}
+export { TopNav, Header, Footer, SubFooter, MainLayout, ProductCard, ProductsSlider, BestSellerProduct, FeaturedProduct, PopularCatogory, Pagination}

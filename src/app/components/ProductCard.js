@@ -15,6 +15,7 @@ productPrevPrice}) => {
           width={250}
           height={250}
           alt='product-thumb'
+          layout='responsive'
         ></Image>
       </div>
 

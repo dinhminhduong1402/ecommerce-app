@@ -1,0 +1,11 @@
+.products-page{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  .products-page-container {
+    width: 100vw;
+    max-width: 1200px;
+    padding: 40px 0;
+  }
+}
