@@ -1,7 +1,7 @@
 import { MainLayout } from './components'
 import { primaryFont } from './fonts'
 import './styles/globalStyles.scss'
-
+import { DataProvider } from './context/DataProvider'
 
 export const metadata = {
   title: 'Comesty store',
@@ -12,7 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={primaryFont.className}>
       <body>
-        <MainLayout>{children}</MainLayout>
+        <MainLayout>
+          <DataProvider>
+            {children}
+          </DataProvider>
+        </MainLayout>
       </body>
     </html>
   )

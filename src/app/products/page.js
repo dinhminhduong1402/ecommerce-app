@@ -1,27 +1,17 @@
 'use client'
-import { client } from '../../../sanity/lib/client'
-import React, { useEffect, useState } from 'react'
-import { ProductCard, ProductsSlider, Pagination } from '../components'
+import React from 'react'
+import { Pagination } from '../components'
+import { useDataProvider } from '../context/DataProvider';
 import '../styles/ProductsPage.scss';
 
-
-const getProducts = async () => {
-  const query = `*[_type == 'products']`
-  const products = client.fetch(query)
-  return products
-}
-
 const ProductsPage = () => {
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-    getProducts().then((data) => {
-      setProducts(data)
-    })
-  }, [])
-
+  const {products} = useDataProvider()
+  
   return (
     <div className='products-page'>
+      <div className='filters-wrapper'>
+        <h4>filter</h4>
+      </div>
       <div className="products-page-container">
       <Pagination
         products={products}

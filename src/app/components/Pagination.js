@@ -5,12 +5,12 @@ import ProductCard from './ProductCard'
 import '../styles/Pagination.scss'
 
 const Pagination = ({products}) => {
-  const itemPerPage = 4
+  const itemPerPage = 9
   const totalPage = Math.ceil(products.length / itemPerPage)
 
   const [currentPage, setCurrentPage] = useState(1)
   const startIndex = (currentPage - 1)*itemPerPage
-  const endIndex = startIndex + itemPerPage - 1
+  const endIndex = startIndex + itemPerPage
 
   const currentProducts = products.slice(startIndex, endIndex)
 
@@ -31,6 +31,7 @@ const Pagination = ({products}) => {
             productCatogory={prod.catogory}
             productPrice={prod.price}
             productPrevPrice={prod.prev_price}
+            productSlug={prod.slug.current}
           />
         </li>
         )}

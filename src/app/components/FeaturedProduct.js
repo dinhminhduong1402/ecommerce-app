@@ -39,6 +39,7 @@ const FeaturedProduct = () => {
                 productCatogory={prod.catogory}
                 productPrice={prod.price}
                 productPrevPrice={prod.prev_price}
+                productSlug={prod.slug.current}
               />
             ))}
           </ProductsSlider>
