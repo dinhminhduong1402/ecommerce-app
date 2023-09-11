@@ -7,12 +7,69 @@
     }
   }
 
+  .icons {
+    display: none;
+    cursor: pointer;
+  }
+
   .thumb  {
     overflow: hidden;
+    position: relative;
     &:hover img {
       transform: scale(1.2);
       transition: transform 0.3s ease;
+      
     }
+    &:hover .icons {
+      display: none;
+      background-color: unset;
+      position: absolute;
+      z-index: 10;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      span {
+        display: none;
+        font-size: 0.7rem;
+        background-color: #fff;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.1px solid rgba($color: #000000, $alpha: 0.1);
+
+        &:hover {
+          background-color: #ef4626;
+          color: #fff;
+        }
+      }
+    }
+
+    .sell-percent {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      border-radius: 50%;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      
+      span {
+        background-color: unset;
+        color: white;
+        font-size: 0.8rem;
+
+      }
+    }
+    
   }
   
   .catogory {
