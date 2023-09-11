@@ -43,10 +43,25 @@ const ProductsDetail = ({params, searchParams}) => {
           <div className='products-detail'>
             <h1 className='name'>{currentProduct?.name}</h1>
             <div className='price-wrapper'>
-              <span>{currentProduct?.price}</span>
+              {currentProduct?.prev_price && 
+                <span className="prev-price">{currentProduct.prev_price?.toFixed(2) + '$'}</span>
+              }
+              <span className="current-price">{currentProduct?.price.toFixed(2) + '$'}</span>
             </div>
-            <p>Sku: {currentProduct?.sku}</p>
-            <p>Category: {currentProduct?.catogory}</p>
+
+            <div className='btns-wrapper'>
+              <div className='qty-wrapper'>
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+              </div>
+              <button className='add-btn'>ADD TO CART</button>
+            </div>
+
+            <div className='sub-details'>
+              <p>Sku: {currentProduct?.sku}</p>
+              <p>Category: {currentProduct?.catogory}</p>
+            </div>
           </div>
         </div>
 
