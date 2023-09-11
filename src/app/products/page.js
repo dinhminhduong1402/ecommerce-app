@@ -3,22 +3,36 @@ import React from 'react'
 import { Pagination } from '../components'
 import { useDataProvider } from '../context/DataProvider';
 import '../styles/ProductsPage.scss';
+import { subFont } from '../fonts';
 
 const ProductsPage = () => {
   const {products} = useDataProvider()
   
   return (
-    <div className='products-page'>
-      <div className='filters-wrapper'>
-        <h4>filter</h4>
+      <div className='products-page'>
+        <div className='products-page-container'>
+          <div className='banner'>
+            <div className='text-wrapper'>
+              <p className='path'>Home / Shop</p>
+              <h1 className={subFont.className}>Shop</h1>
+              <p className='decs'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+            </div>
+          </div>
+
+          <div className='main-section'>
+            <div className='filters-wrapper'>
+              <h4>PRODUCT CATEGORIES</h4>
+            </div>
+            <div className="products-wrapper">
+            <Pagination
+              products={products}
+            />
+            </div>
+          </div>
+
+
+        </div>
       </div>
-      <div className="products-page-container">
-      <Pagination
-        products={products}
-      />
-      </div>
-    </div>
-    
   )
 }
 

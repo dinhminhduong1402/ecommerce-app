@@ -1,7 +1,22 @@
 .product-card-wrapper {
   width: 100%;
 
+  * {
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .thumb  {
+    overflow: hidden;
+    &:hover img {
+      transform: scale(1.2);
+      transition: transform 0.3s ease;
+    }
+  }
+  
   .catogory {
+    padding-top: 10px;
     font-size: 0.7rem;
     font-weight: 500;
     color: #ef4626;
@@ -9,7 +24,23 @@
   }
 
   .name {
+    padding-top: 10px;
     font-size: 0.9rem;
     font-weight: 600;
+  }
+
+  .price {
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+
+    .prev-price {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+    
+    .current-price {
+      
+    }
   }
 }

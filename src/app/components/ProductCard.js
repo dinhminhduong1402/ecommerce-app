@@ -4,6 +4,7 @@ import '../styles/ProductCard.scss'
 import Image from 'next/image'
 import { urlForImage } from '../../../sanity/lib/image'
 import Link from 'next/link'
+import { PiCurrencyDollarThin } from "react-icons/pi"
 
 const ProductCard = ({
   productThumb,
@@ -35,8 +36,10 @@ const ProductCard = ({
         <h2 className="name">{productName || 'Product Name'}</h2>
 
         <div className="price">
-          <span className="prev-price">{productPrevPrice || 'pre price'}</span>
-          <span className="current-price">{productPrice || 'current price'}</span>
+          {productPrevPrice && 
+          <span className="prev-price">{productPrevPrice.toFixed(2) + '$'}</span>
+          }
+          <span className="current-price">{productPrice?.toFixed(2) + '$'}</span>
         </div>
       </Link>
     </div>
