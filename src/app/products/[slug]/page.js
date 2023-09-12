@@ -1,19 +1,52 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import '../../styles/ProductsDetail.scss'
 import { useDataProvider } from '@/app/context/DataProvider'
+import { RelativeProducts } from '@/app/components'
+import { urlForImage } from '../../../../sanity/lib/image'
+// react-responsive-carousel
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import Image from 'next/image'
-import { urlForImage } from '../../../../sanity/lib/image'
-import { imageConfigDefault } from 'next/dist/shared/lib/image-config'
 
-const ProductsDetail = ({params, searchParams}) => {
-  const {products} = useDataProvider()
+
+const ProductsDetail = ({params}) => {
+  const {products, cartTotal, setCartTotal, cartData, setCartData} = useDataProvider()
   const {slug} = params
   const [currentProduct] = products.filter((prod) => prod.slug.current === slug)
+
+  // trạng thái số lượng
+  const [qty, setQty] = useState(1)
+  const handleIncrease = () => {
+    setQty(prev => prev + 1)
+  }
+  const handleDecrease = () => {
+    if (qty > 1) {
+      setQty(prev => prev - 1)
+    }
+  }
+  // xử lí giỏ hàng
+  const handleSetCart = () => {
+    setCartData(prev => {
+      let newData = [...prev]
+      const isExist = prev.find((prod) => prod.product == currentProduct)
+
+      if (isExist) {
+        for (let i = 0; i < newData.length; i++ ) {
+          if (newData[i].product == currentProduct) {
+            newData[i].qty = parseInt(newData[i].qty) + qty
+          }
+        }
+      } else {
+        newData.push({
+          product: currentProduct,
+          qty: qty
+        })
+      }
+      localStorage.setItem('cartData', JSON.stringify(newData))
+      return newData
+    })
+  }
   
-  console.log(currentProduct)
 
   return (
     <div className='products-detail-main'>
@@ -51,11 +84,11 @@ const ProductsDetail = ({params, searchParams}) => {
 
             <div className='btns-wrapper'>
               <div className='qty-wrapper'>
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+                <button onClick={handleDecrease}>-</button>
+                <span>{qty}</span>
+                <button onClick={handleIncrease}>+</button>
               </div>
-              <button className='add-btn'>ADD TO CART</button>
+              <button className='add-btn' onClick={handleSetCart}>ADD TO CART</button>
             </div>
 
             <div className='sub-details'>
@@ -72,6 +105,9 @@ const ProductsDetail = ({params, searchParams}) => {
 
         <div className='relative-products-wrapper'>
           <h4>Relative Products</h4>
+          <RelativeProducts
+            currentProduct={currentProduct}
+          />
         </div>
 
       </div>

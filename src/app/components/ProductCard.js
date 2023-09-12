@@ -1,10 +1,11 @@
-// 'use client'
+'use client'
 import React from 'react'
 import '../styles/ProductCard.scss'
 import Image from 'next/image'
 import { urlForImage } from '../../../sanity/lib/image'
 import Link from 'next/link'
 import { BsCart2, BsHeart } from 'react-icons/bs'
+import { useDataProvider } from '../context/DataProvider'
 
 const ProductCard = ({
   productThumb,
@@ -14,6 +15,32 @@ const ProductCard = ({
   productPrevPrice,
   productSlug,
 }) => {
+  const {products, cartData, setCartData} = useDataProvider()
+  
+  const currentProduct = products.filter(prod => prod.name == productName)[0]
+  const handleSetCart = () => {
+    setCartData(prev => {
+      let newData = [...prev]
+      const isExist = prev.find((prod) => prod.product == currentProduct)
+
+      if (isExist) {
+        for (let i = 0; i < newData.length; i++ ) {
+          if (newData[i].product == currentProduct) {
+            newData[i].qty = parseInt(newData[i].qty) + 1
+          }
+        }
+      } else {
+        newData.push({
+          product: currentProduct,
+          qty: 1
+        })
+      }
+      
+      localStorage.setItem('cartData', JSON.stringify(newData))
+      return newData
+    })
+  }
+  
   return (
     <div className="product-card-wrapper">
       <div className="thumb">
@@ -27,7 +54,7 @@ const ProductCard = ({
           <span>
             <BsHeart />
           </span>
-          <span>
+          <span onClick={handleSetCart}>
             <BsCart2 />
           </span>
         </div>

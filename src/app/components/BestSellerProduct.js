@@ -16,7 +16,6 @@ const BestSellerProduct = () => {
   useEffect(() => {
     getBestSellerProducts().then((data) =>{
        getBsProducts(data)
-       console.log(data)
     })
   }, [])
 

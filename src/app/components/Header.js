@@ -1,15 +1,21 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import '../styles/Header.scss'
-
 // icons
 import { CiSearch, CiUser, CiShoppingCart,  } from 'react-icons/ci'
-
 // images
 import Image from 'next/image'
 import logo from '../asset/logo.png'
 import Link from 'next/link'
+import { useDataProvider } from '../context/DataProvider'
 
 const Header = () => {
+  const {cartData} = useDataProvider()
+
+  const cartTotal = cartData.reduce((total, item) => {
+    return total += parseInt(item.qty)
+  }, 0) || 0
+
   return (
     <div className='header'>
       <div className='header-container'>
@@ -40,7 +46,8 @@ const Header = () => {
           <Link href={'/'}>
             <CiUser/>
           </Link>
-          <Link href={'/'}>
+          <Link className='cart-btn' href={'/cart'}>
+              <span className='cart-qty'>{cartTotal}</span>
             <CiShoppingCart/>
           </Link>
         </div>

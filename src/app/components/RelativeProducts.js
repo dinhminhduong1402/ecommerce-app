@@ -4,29 +4,25 @@ import React, { useEffect, useState } from 'react'
 import { client } from '../../../sanity/lib/client'
 import {ProductsSlider, ProductCard} from '.'
 
-const getFeaturedProducts = async () => {
-  const query = `*[_type == "products"] | order(stock desc)`
+const getRelativeProducts = async () => {
+  const query = `*[_type == "products"]`
   const data = await client.fetch(query)
   return data
 }
 
-const FeaturedProduct = () => {
+const RelativeProduct = ({currentProduct}) => {
   const [products, getProducts] = useState([])
 
   useEffect(() => {
-    getFeaturedProducts().then((data) =>{
-      getProducts(data)
+    getRelativeProducts().then((data) =>{
+      getProducts(data?.filter(prod => prod.catogory == currentProduct.catogory))
+       console.log(data)
     })
   }, [])
 
   return (
-    <section className="best-seller-products">
-      <div className="best-seller-products-container">
-
-        <div className="section-title">
-          <h2>Featured products</h2>
-          <span>View all products</span>
-        </div>
+    <section className="relative-products">
+      <div className="relative-products-container">
 
         <div className="products-slider">
           <ProductsSlider>
@@ -48,4 +44,4 @@ const FeaturedProduct = () => {
   )
 }
 
-export default FeaturedProduct
+export default RelativeProduct
