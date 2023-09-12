@@ -25,7 +25,11 @@ const DataProvider = ({children}) => {
 
   // dữ liệu giỏ hàng
   const iniCartData = () => {
-    const localCartData = JSON.parse(localStorage?.getItem('cartData'))
+
+    let localCartData = null
+    if (typeof window !== 'undefined') {
+      localCartData = JSON.parse(localStorage.getItem('cartData'))
+    }
     return localCartData || []
   }
   const [cartData, setCartData] = useState(iniCartData())

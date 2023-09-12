@@ -35,8 +35,9 @@ const ProductCard = ({
           qty: 1
         })
       }
-      
-      localStorage?.setItem('cartData', JSON.stringify(newData))
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('cartData', JSON.stringify(newData))
+      }
       return newData
     })
   }
