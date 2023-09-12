@@ -36,7 +36,7 @@ const ProductCard = ({
         })
       }
       
-      localStorage.setItem('cartData', JSON.stringify(newData))
+      localStorage?.setItem('cartData', JSON.stringify(newData))
       return newData
     })
   }
