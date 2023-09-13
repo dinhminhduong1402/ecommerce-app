@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import '../styles/Header.scss'
 // icons
 import { CiSearch, CiUser, CiShoppingCart,  } from 'react-icons/ci'
@@ -8,6 +8,7 @@ import Image from 'next/image'
 import logo from '../asset/logo.png'
 import Link from 'next/link'
 import { useDataProvider } from '../context/DataProvider'
+import {CartModal} from '../components'
 
 const Header = () => {
   const {cartData} = useDataProvider()
@@ -15,6 +16,14 @@ const Header = () => {
   const cartTotal = cartData.reduce((total, item) => {
     return total += parseInt(item.qty)
   }, 0) || 0
+
+  const [openCartModal, setOpenCartModal] = useState(false)
+  const handleOpenCartModal = () => {
+    setOpenCartModal(true)
+  }
+  const handleCloseCartModal = () => {
+    setOpenCartModal(false)
+  }
 
   return (
     <div className='header'>
@@ -46,11 +55,23 @@ const Header = () => {
           <Link href={'/'}>
             <CiUser/>
           </Link>
-          <Link className='cart-btn' href={'/cart'}>
-              <span className='cart-qty'>{cartTotal}</span>
+
+          <Link className='cart-btn' href={'/cart'} onMouseEnter={handleOpenCartModal}>
+            <span 
+              className='cart-qty' 
+            >
+              {cartTotal}
+            </span>
             <CiShoppingCart/>
           </Link>
+
+          { openCartModal &&
+            <div className='cart-modal' onMouseLeave={handleCloseCartModal}>
+            <CartModal/>
+            </div>
+          }
         </div>
+
       </div>
     </div>
   )

@@ -1,0 +1,57 @@
+.cart-modal-wapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 30px;
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 350px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      background-color: rgba(0, 0, 0, 0.2);
+      width: 6px;
+      height: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(239, 70, 38);
+    }
+  }
+
+  .subtotal {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+
+    span {
+      padding-top: 10px;
+    }
+  }
+
+  .btns {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    a {
+      width: 50%;
+    }
+
+    button {
+      width: 100%;
+      background-color: #ef4626;
+      border: none;
+      color: #fff;
+      text-align: center;
+      height: 50px;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+  }
+}

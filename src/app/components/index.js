@@ -10,5 +10,7 @@ import FeaturedProduct from "./FeaturedProduct";
 import PopularCatogory from "./PopularCatogory";
 import Pagination from "./Pagination";
 import RelativeProducts from "./RelativeProducts";
+import CartModalItem from "./CartModalItem";
+import CartModal from "./CartModal";
 
-export { TopNav, Header, Footer, SubFooter, MainLayout, ProductCard, ProductsSlider, BestSellerProduct, FeaturedProduct, PopularCatogory, Pagination, RelativeProducts}
+export { TopNav, Header, Footer, SubFooter, MainLayout, ProductCard, ProductsSlider, BestSellerProduct, FeaturedProduct, PopularCatogory, Pagination, RelativeProducts, CartModalItem, CartModal}

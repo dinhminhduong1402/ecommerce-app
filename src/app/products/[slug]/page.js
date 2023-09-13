@@ -24,6 +24,7 @@ const ProductsDetail = ({params}) => {
       setQty(prev => prev - 1)
     }
   }
+  
   // xử lí giỏ hàng
   const handleSetCart = () => {
     setCartData(prev => {
@@ -49,7 +50,6 @@ const ProductsDetail = ({params}) => {
     })
   }
   
-
   return (
     <div className='products-detail-main'>
       <div className='products-detail-container'>
