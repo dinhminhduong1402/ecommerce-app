@@ -7,6 +7,7 @@ import { urlForImage } from '../../../../sanity/lib/image'
 // react-responsive-carousel
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import { toast } from 'react-toastify'
 
 
 const ProductsDetail = ({params}) => {
@@ -43,9 +44,13 @@ const ProductsDetail = ({params}) => {
           qty: qty
         })
       }
+
       if (typeof window !== 'undefined') {
         localStorage.setItem('cartData', JSON.stringify(newData))
       }
+
+      toast('Your product is added to cart!', { type: 'success'})
+
       return newData
     })
   }

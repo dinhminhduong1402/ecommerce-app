@@ -6,6 +6,8 @@ import { urlForImage } from '../../../sanity/lib/image'
 import Link from 'next/link'
 import { BsCart2, BsHeart } from 'react-icons/bs'
 import { useDataProvider } from '../context/DataProvider'
+// toast
+import { toast } from 'react-toastify'
 
 const ProductCard = ({
   productThumb,
@@ -39,6 +41,9 @@ const ProductCard = ({
       if (typeof window !== 'undefined') {
         localStorage.setItem('cartData', JSON.stringify(newData))
       }
+      
+      toast('Your product is added to cart!', { type: 'success'})
+      
       return newData
     })
   }
