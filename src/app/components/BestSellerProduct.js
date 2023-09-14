@@ -19,7 +19,6 @@ const BestSellerProduct = () => {
     })
   }, [])
 
-  // console.log(bsProducts)
 
   return (
     <section className="best-seller-products">

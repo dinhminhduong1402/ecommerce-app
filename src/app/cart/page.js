@@ -7,6 +7,9 @@ import {CartItem} from '../components'
 
 const CartPage = () => {
   const {cartData} = useDataProvider()
+  const cartTotal = cartData?.reduce((total, item) => {
+    return total += parseInt(item.qty)*parseInt(item.product.price)
+  }, 0) || 0
   return (
     <div className='cart-page-main'>
       <div className='cart-page-container'>
@@ -19,18 +22,23 @@ const CartPage = () => {
         </div>
 
         <div className='cart-section'>
-          {cartData && 
-            cartData.map((item, ind) => 
-              <div key={ind}>
-                <CartItem
-                  productThumb = {item.product.thumbs[0]}
-                  productName = {item.product.name}
-                  qty = {item.qty}
-                  productPrice = {item.product.price}
-                />
-              </div>
-            )
-          }
+          <div className='cart-items-wrapper'>
+            {cartData && 
+              cartData.map((item, ind) => 
+                <div key={ind}>
+                  <CartItem
+                    productThumb = {item.product.thumbs[0]}
+                    productName = {item.product.name}
+                    qty = {item.qty}
+                    productPrice = {item.product.price}
+                  />
+                </div>
+              )
+            }
+          </div>
+          <div className='cart-total-wrapper'>
+            {'Total: ' + cartTotal + '$'}
+          </div>
         </div>
       </div>
     </div>

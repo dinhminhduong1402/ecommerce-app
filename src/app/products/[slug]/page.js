@@ -49,7 +49,7 @@ const ProductsDetail = ({params}) => {
         localStorage.setItem('cartData', JSON.stringify(newData))
       }
 
-      toast('Your product is added to cart!', { type: 'success'})
+      toast('Product successfully added to your cart!', { type: 'success'})
 
       return newData
     })

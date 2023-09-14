@@ -42,5 +42,24 @@
         }
       }
     }
+
+    .cart-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 80px;
+      padding: 20px;
+
+      .cart-items-wrapper {
+        width: 60%;
+      }
+      .cart-total-wrapper {
+        width: 40%;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+        padding: 20px;
+        height: fit-content;
+        min-height: 300px;
+      }
+    }
   }
 }

@@ -5,17 +5,17 @@ import { client } from '../../../sanity/lib/client'
 import {ProductsSlider, ProductCard} from '.'
 
 const getFeaturedProducts = async () => {
-  const query = `*[_type == "products"] | order(stock desc)`
+  const query = `*[_type == "products"]`
   const data = await client.fetch(query)
   return data
 }
 
 const FeaturedProduct = () => {
-  const [products, getProducts] = useState([])
+  const [products, setProducts] = useState([])
 
   useEffect(() => {
     getFeaturedProducts().then((data) =>{
-      getProducts(data)
+      setProducts(data)
     })
   }, [])
 

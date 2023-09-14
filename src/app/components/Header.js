@@ -30,20 +30,22 @@ const Header = () => {
       <div className='header-container'>
 
         <div className='left'>
-          <Image 
-          className='logo'
-          src={logo}
-          alt='logo'
-          width={168}
-          height={40}
-          />
+          <Link href={'/'}>
+            <Image 
+            className='logo'
+            src={logo}
+            alt='logo'
+            width={168}
+            height={40}
+            />
+          </Link>
         </div>
 
         <div className='center'>
           <Link className='links' href={'/'}>Home</Link>
           <Link className='links' href={'/products'}>Shop</Link>
           <Link className='links' href={'/'}>News</Link>
-          <Link className='links' href={'/'}>Contact</Link>
+          <Link className='links' href={'#footer'}>Contact</Link>
         </div>
         
         <div className='search-box'>

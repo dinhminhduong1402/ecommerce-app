@@ -5,7 +5,7 @@ import { BsArrowRight } from 'react-icons/bs'
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer" id='footer'>
       <div className="footer-container">
         <div className="col col-left">
           <h4>ABOUT COSMETSY</h4>

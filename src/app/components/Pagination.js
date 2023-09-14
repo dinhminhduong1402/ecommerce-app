@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import ProductCard from './ProductCard'
 import '../styles/Pagination.scss'
 
@@ -14,14 +14,15 @@ const Pagination = ({products}) => {
 
   const currentProducts = products.slice(startIndex, endIndex)
 
-
+  const productWrapperRef = useRef(null)
   const handleSetCurrentPage = (pageNumber) => {
+    productWrapperRef.current.scrollIntoView({ behavior: "smooth" })
     setCurrentPage(pageNumber)
   }
 
   return (
     <>
-      <div className='products-wrapper'>
+      <div className='products-wrapper' ref={productWrapperRef}>
         <ul>
         {currentProducts.map((prod, ind) => 
         <li key={ind}>
