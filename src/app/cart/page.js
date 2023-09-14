@@ -3,6 +3,7 @@ import React from 'react'
 import { subFont } from '../fonts'
 import '../styles/CartPage.scss'
 import { useDataProvider } from '../context/DataProvider'
+import {CartItem} from '../components'
 
 const CartPage = () => {
   const {cartData} = useDataProvider()
@@ -21,7 +22,12 @@ const CartPage = () => {
           {cartData && 
             cartData.map((item, ind) => 
               <div key={ind}>
-                {item.product.name + ' --- ' + item.qty}
+                <CartItem
+                  productThumb = {item.product.thumbs[0]}
+                  productName = {item.product.name}
+                  qty = {item.qty}
+                  productPrice = {item.product.price}
+                />
               </div>
             )
           }
