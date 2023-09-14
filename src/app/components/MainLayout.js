@@ -5,7 +5,7 @@ import SubFooter from "./SubFooter";
 
 const MainLayout = ({children}) => {
   return (
-    <>
+    <div className="main-layout">
       <header>
         <TopNav/>
         <Header/>
@@ -19,7 +19,7 @@ const MainLayout = ({children}) => {
         <Footer/>
         <SubFooter/>
       </footer>
-    </>
+    </div>
   )
 }
 

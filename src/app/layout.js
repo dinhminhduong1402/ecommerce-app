@@ -3,7 +3,6 @@ import { primaryFont } from './fonts'
 import './styles/globalStyles.scss'
 import { DataProvider } from './context/DataProvider'
 // toast messages
-import './styles/ToastifyCustomStyle.scss'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Zoom } from 'react-toastify';
