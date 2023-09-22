@@ -74,9 +74,6 @@ export default function Home() {
 
       <PopularCatogory />
 
-      <section>Discount</section>
-
-      <section>LatestNews</section>
     </>
   )
 }

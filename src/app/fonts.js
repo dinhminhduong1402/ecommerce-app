@@ -1,6 +1,8 @@
 import { DM_Sans, Crimson_Text } from 'next/font/google'
 
-const primaryFont = DM_Sans({ subsets: ['latin'] })
+const primaryFont = DM_Sans({ 
+  subsets: ['latin'],
+})
 
 const subFont = Crimson_Text({
   subsets: ['latin'],

@@ -59,6 +59,44 @@
         padding: 20px;
         height: fit-content;
         min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+
+        .title {
+          text-align: center;
+        }
+
+        ul {
+          li {
+            display: flex;
+            justify-content: space-between
+          }
+          li + li {
+            padding-top: 10px;
+          }
+        }
+
+        .total-wrapper {
+          display: flex;
+          justify-content: space-between;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+
+        .check-out-btn-wrapper {
+          text-align: center;
+          button {
+            border: none;
+            background-color: #ef4626;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 400;
+            height: 50px;
+            width: 100%;
+          }
+        }
       }
     }
   }

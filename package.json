@@ -12,6 +12,7 @@
     "@sanity/client": "^6.4.9",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.16.2",
+    "braintree": "^3.17.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",
@@ -27,5 +28,10 @@
   },
   "devDependencies": {
     "sass": "^1.66.1"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }
