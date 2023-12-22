@@ -1,12 +1,12 @@
 'use client'
-import React from 'react'
+import React, { useContext } from 'react'
 import { Pagination } from '../components'
-import { useDataProvider } from '../context/DataProvider';
+import { DataContext, useDataProvider } from '../context/DataProvider';
 import '../styles/ProductsPage.scss';
 import { subFont } from '../fonts';
 
 const ProductsPage = () => {
-  const {products} = useDataProvider()
+  const {products} = useContext(DataContext)
   
   return (
       <div className='products-page'>

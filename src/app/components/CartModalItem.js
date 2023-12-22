@@ -1,11 +1,11 @@
-import React from 'react'
-import { useDataProvider } from '../context/DataProvider'
+import React, { useContext } from 'react'
+import { DataContext, useDataProvider } from '../context/DataProvider'
 import { urlForImage } from '../../../sanity/lib/image'
 import '../styles/CartModalItem.scss'
 import Image from 'next/image'
 
 const CartModalItem = ({productThumb, productName, qty, productPrice}) => {
-  const {setCartData} = useDataProvider()
+  const {setCartData} = useContext(DataContext)
 
   const handleDeleteItem = () => {
     setCartData(prev => {

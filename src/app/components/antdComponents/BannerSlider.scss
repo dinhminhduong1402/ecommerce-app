@@ -1,0 +1,38 @@
+.hero-banner-text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5% 0 5% 5%;
+  box-sizing: border-box;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  h6 {
+    font-size: 0.8rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+    width: 60%;
+  }
+  p {
+    width: 60%;
+  }
+  button {
+    font-size: 1rem;
+    color: white;
+    border: solid 1px white;
+    height: 50px;
+    width: 100px;
+    background-color: unset;
+    font-weight: 200;
+    transition: 0.7s;
+
+    &:hover {
+      background-color: white;
+      color: black;
+      transition: 0.7s;
+    }
+  }
+}

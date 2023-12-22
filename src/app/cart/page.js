@@ -1,13 +1,14 @@
 'use client'
-import React from 'react'
+import React, { useContext } from 'react'
 import { subFont } from '../fonts'
 import '../styles/CartPage.scss'
-import { useDataProvider } from '../context/DataProvider'
+import { DataContext } from '../context/DataProvider'
 import {CartItem} from '../components'
+import Link from 'next/link'
 
 const CartPage = () => {
   
-  const {cartData} = useDataProvider()
+  const {cartData} = useContext(DataContext)
   const cartTotal = cartData?.reduce((total, item) => {
     return total += parseInt(item.qty)*parseInt(item.product.price)
   }, 0) || 0
@@ -60,7 +61,9 @@ const CartPage = () => {
               <span className='total-price'>{cartTotal + '$'}</span>
             </div>
             <div className='check-out-btn-wrapper'>
-              <button>CHECK OUT</button>
+              <Link href={'/checkout'}>
+                <button>CHECK OUT</button>
+              </Link>
             </div>
             
           </div>

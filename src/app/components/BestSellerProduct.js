@@ -19,7 +19,6 @@ const BestSellerProduct = () => {
     })
   }, [])
 
-
   return (
     <section className="best-seller-products">
       <div className="best-seller-products-container">

@@ -1,11 +1,11 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {ProductsSlider, ProductCard} from '.'
-import { useDataProvider } from '../context/DataProvider'
+import { DataContext, useDataProvider } from '../context/DataProvider'
 
 const RelativeProduct = ({currentProduct}) => {
-  const {products} = useDataProvider()
+  const {products} = useContext(DataContext)
   const [relativeProducts, setRelativeProducts] = useState([])
 
   useEffect(() => {

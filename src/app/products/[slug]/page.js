@@ -1,7 +1,7 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../../styles/ProductsDetail.scss'
-import { useDataProvider } from '@/app/context/DataProvider'
+import { DataContext } from '@/app/context/DataProvider'
 import { RelativeProducts } from '@/app/components'
 import { urlForImage } from '../../../../sanity/lib/image'
 // react-responsive-carousel
@@ -11,7 +11,7 @@ import { toast } from 'react-toastify'
 
 
 const ProductsDetail = ({params}) => {
-  const {products, cartTotal, setCartTotal, cartData, setCartData} = useDataProvider()
+  const {products, cartTotal, setCartTotal, cartData, setCartData} = useContext(DataContext)
   const {slug} = params
   const [currentProduct] = products.filter((prod) => prod.slug.current === slug)
 

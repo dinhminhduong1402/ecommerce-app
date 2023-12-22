@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../styles/CartItem.scss'
 import Image from 'next/image'
-import { useDataProvider } from '../context/DataProvider'
+import { DataContext, useDataProvider } from '../context/DataProvider'
 import { urlForImage } from '../../../sanity/lib/image'
 
 const CartItem = ({productThumb, productName, qty, productPrice}) => {
-  const {products, cartData, setCartData} = useDataProvider()
+  const {products, cartData, setCartData} = useContext(DataContext)
   const [currentCartItem] = cartData?.filter(item => item.product.name === productName)
 
   const handleIncrease = () => {

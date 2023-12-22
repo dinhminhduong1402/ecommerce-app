@@ -60,15 +60,19 @@
     }
 
     .right {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-right: 40px;
       display: flex;
       justify-content: end;
-      gap: 20px;
+      gap: auto;
       align-items: center;
-      position: relative;;
+      position: relative;
+      
 
-      .cart-qty {
+      .cart-btn {
+        position: relative;
+
+        .cart-qty {
         width: 20px;
         height: 20px;
         font-size: 0.7rem;
@@ -82,16 +86,19 @@
         background-color: #ef4626;
         color: #fff;
       }
+      }
 
       .cart-modal {
+        display: none;
         position: absolute;
-        top: 50px;
+        top: 100%;
         right: 0;
         width: 500px;
         background-color: #fff;
         box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.2);
         padding: 30px;
-        z-index: 100;
+        z-index: 1000;
+        transition: 0.7s;
       }
     }
   }

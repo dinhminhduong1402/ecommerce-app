@@ -1,4 +1,3 @@
-import { NextResponse, NextRequest } from "next/server";
 import { gateway } from "@/app/lib/gateway-payment";
 
 export async function POST(request) {
@@ -9,7 +8,7 @@ export async function POST(request) {
   // gửi yêu cầu đến braintree tạo giao dịch
   gateway.transaction.sale(
     {
-      amount: "10.00",
+      amount: "15.00",
       paymentMethodNonce: "fake-valid-nonce",
       options: {
         submitForSettlement: true,
@@ -18,13 +17,11 @@ export async function POST(request) {
     (error, result) => {
       // xử lí phản hồi về client
       if (result && result.success) {
-        console.log("Giao dịch thành công!");
-        console.log("ID giao dịch:", result.transaction.id);
+        
       } else {
        
       }
     }
   );
-
-  
+  return Response.json(`giao dịch thành công`, {status: 200,})
 }

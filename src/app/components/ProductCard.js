@@ -1,11 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useContext } from 'react'
 import '../styles/ProductCard.scss'
 import Image from 'next/image'
 import { urlForImage } from '../../../sanity/lib/image'
 import Link from 'next/link'
 import { BsCart2, BsHeart } from 'react-icons/bs'
-import { useDataProvider } from '../context/DataProvider'
+import { DataContext } from '../context/DataProvider'
 // toast
 import { toast } from 'react-toastify'
 
@@ -17,7 +17,7 @@ const ProductCard = ({
   productPrevPrice,
   productSlug,
 }) => {
-  const {products, cartData, setCartData} = useDataProvider()
+  const {products, cartData, setCartData} = useContext(DataContext)
   
   const currentProduct = products.filter(prod => prod.name == productName)[0]
   const handleSetCart = () => {

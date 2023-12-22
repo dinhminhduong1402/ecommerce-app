@@ -1,6 +1,17 @@
 .slider-wrapper {
+  height: auto;
   .react-multi-carousel-track {
+    overflow: hidden;
     gap: 20px;
+    li {
+      height: fit-content;
+    }
+    // max-height: 550px;
   }
+  .react-multiple-carousel__arrow.react-multiple-carousel__arrow--left,
+  .react-multiple-carousel__arrow.react-multiple-carousel__arrow--right {
+    top: 140px;
+    z-index: 10000;
+  } 
   
 }

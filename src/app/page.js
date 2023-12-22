@@ -2,7 +2,8 @@ import './styles/HomePage.scss'
 import { subFont } from './fonts'
 import Image from 'next/image'
 import { BestSellerProduct, FeaturedProduct, PopularCatogory } from './components'
-import Link from 'next/link'
+import Link from 'next/link';
+import BannerSlider from './components/antdComponents/BannerSlider';
 
 // images
 import { brand1, brand2, brand3, brand4, brand5 } from './asset/brand'
@@ -11,7 +12,13 @@ import subBannerImage from './asset/sub-banner.jpg'
 export default function Home() {
   return (
     <>
-      <section className="hero-banner">
+      <section className='banner-slider-section'>
+        <div className='banner-slider-container'>
+        <BannerSlider/>
+        </div>
+      </section>
+
+      {/* <section className="hero-banner">
         <div className="hero-banner-container">
           <div className="hero-banner-text">
             <h6>BOTANICAL SKINCARE</h6>
@@ -27,7 +34,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <BestSellerProduct />
 
