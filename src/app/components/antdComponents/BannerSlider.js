@@ -9,16 +9,16 @@ import './BannerSlider.scss'
 
 const BannerSlider = () => {
   const [bannerData, setBannerData] = useState([])
-  const getBannerData = async() => {
+  const getBannerData = async () => {
     const query = `*[_type == "banner_images"]`
     const bannerData = await client.fetch(query)
     return bannerData
-  } 
+  }
   useEffect(() => {
-    getBannerData().then((data) =>{
-       setBannerData(data)
+    getBannerData().then((data) => {
+      setBannerData(data)
     })
-  }, [])
+  }, [bannerData])
   return (
     <Carousel autoplay autoplaySpeed={2500} infinite fade>
       {bannerData?.map((item, ind) => (

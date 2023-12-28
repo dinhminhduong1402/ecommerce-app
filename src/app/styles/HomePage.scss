@@ -27,38 +27,7 @@
     justify-content: start;
     align-items: center;
 
-    .hero-banner-text {
-      width: 50%;
-      margin-left: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex-wrap: nowrap;
-      gap: 20px;
-      
-      h6, h2, p, button {
-        color: #fff;
-      }
-
-      h2 {
-        font-size: 3rem;
-        font-weight: 200;
-      }
-
-      button {
-        border: #fff solid 0.3px;
-        background-color: unset;
-        height: 38px;
-        width: 20%;
-        font-size: 0.8rem;
-        font-weight: 700;
-        cursor: pointer;
-        &:hover {
-          background-color: #fff;
-          color: #000;
-        }
-      }
-    }
+    
   }
 
   
